@@ -1,7 +1,8 @@
 
 1. List all the actors born before 1980.
 ```sql
-mysql> select name actor_name, year_of_birth from main_actors_tbl where year_of_birth < 1980;
+select name actor_name, year_of_birth 
+FROM main_actors_tbl where year_of_birth < 1980;
 +-----------------------+---------------+
 | actor_name            | year_of_birth |
 +-----------------------+---------------+
@@ -16,7 +17,11 @@ mysql> select name actor_name, year_of_birth from main_actors_tbl where year_of_
 
 2. How many movies did Nolan direct ?
 ```sql 
-mysql> select dir.name director_name, mov.title movie_name  FROM directors_tbl dir INNER JOIN movies_tbl mov ON dir.id = mov.director_id  WHERE dir.name LIKE "%Nolan%";
+select dir.name director_name, mov.title movie_name  
+FROM directors_tbl dir 
+INNER JOIN movies_tbl mov ON dir.id = mov.director_id  
+WHERE dir.name LIKE "%Nolan%";
+
 +-------------------+-----------------+
 | director_name     | movie_name      |
 +-------------------+-----------------+
