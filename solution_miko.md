@@ -43,7 +43,6 @@ INNER JOIN main_actors_tbl act ON act.id = mov_act.main_actors_id
 INNER JOIN directors_tbl dir ON dir.id = mov.director_id
 WHERE dir.name LIKE "%Cameron%" 
 AND act.sex LIKE "f";
-```
 
 +---------------+------------+------------------+
 | director_name | movie_name | female_actor     |
@@ -51,6 +50,7 @@ AND act.sex LIKE "f";
 | James Cameron | Aliens     | Sigourney Weaver |
 | James Cameron | Avatar     | Zoe Saldaña      |
 +---------------+------------+------------------+
+```
 
 
 OR 
@@ -67,13 +67,13 @@ INNER JOIN directors_tbl dir ON dir.id = mov.director_id
 WHERE dir.name LIKE "%Cameron%" 
 AND act.sex LIKE "f"
 GROUP BY 1;
-```
 
 +---------------+-------------------------+
 | director_name | amount_female_actresses |
 +---------------+-------------------------+
 | James Cameron |                       2 |
 +---------------+-------------------------+
+```
 
 
 
@@ -88,12 +88,12 @@ INNER JOIN main_actors_tbl act ON act.id = mov_act.main_actors_id
 INNER JOIN directors_tbl dir ON dir.id = mov.director_id
 WHERE act.name LIKE "%Caprio%" 
 GROUP BY 1;
-```
 +-------------------+------------------+
 | actor_name        | amount_directors |
 +-------------------+------------------+
 | Leonardo DiCaprio |                2 |
 +-------------------+------------------+
+```
 
 
 5. Who is the oldest director ?
@@ -102,12 +102,12 @@ SELECT name, year_of_birth
 FROM directors_tbl 
 ORDER BY year_of_birth
 Limit 1;
-```
 +---------------+---------------+
 | name          | year_of_birth |
 +---------------+---------------+
 | James Cameron |          1954 |
 +---------------+---------------+
+```
 
 
 6. What is the earliest movie of the youngest director ?
@@ -119,13 +119,13 @@ WHERE dir.id = (SELECT id
     FROM directors_tbl 
     ORDER BY year_of_birth DESC
     Limit 1 );
-```
 
 +-------------+--------------+---------------+---------------+
 | movie_title | release_year | director_name | year_of_birth |
 +-------------+--------------+---------------+---------------+
 | Eternals    |         2021 | Chloe Zhaos   |          1982 |
 +-------------+--------------+---------------+---------------+
+```
 
 
 7. What is the latest movie of the youngest actor ?
@@ -143,9 +143,9 @@ AND mov.id = (SELECT id
     FROM movies_tbl 
     ORDER BY release_year DESC
     Limit 1 );
-```
 +-------------+--------------+-------------+---------------+
 | movie_title | release_year | actors_name | year_of_birth |
 +-------------+--------------+-------------+---------------+
 | Cleopatra   |         2023 | Gal Gadot   |          1985 |
 +-------------+--------------+-------------+---------------+
+```
