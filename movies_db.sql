@@ -1,13 +1,14 @@
-# create a new db
+-- drop db 
+DROP movie_db IF exists;
+
+-- create a new db
 CREATE DATABASE movie_db;
 
-SHOW databases;
+-- SHOW databases;
 
 USE movie_db;
 
-SHOW TABLES;
-
-CREATE TABLE;
+--SHOW TABLES;
 
 create table directors_tbl(
     id int NOT NULL AUTO_INCREMENT,
@@ -16,7 +17,7 @@ create table directors_tbl(
     PRIMARY KEY (id)
 );
 
-describe directors_tbl;
+--describe directors_tbl;
 
 # new entry
 INSERT INTO directors_tbl VALUES(
@@ -30,6 +31,8 @@ INSERT INTO directors_tbl VALUES(
     "Christopher Nolan",
     1970
 );
+
+
 
 CREATE TABLE movies_tbl(
     id int NOT NULL AUTO_INCREMENT,
