@@ -1,4 +1,4 @@
-# VPC on Talent Academy Lab account as variable
+# VPC on Talent Academy Lab account as variable because is existing, just can be called by tag Key:Project - value is "Talent-Academy"
 data "aws_vpc" "vpc" {
     filter {
         name = "tag:Project"
@@ -62,3 +62,11 @@ data "aws_subnet" "private_subnet_az_c" {
     }
 }
 
+# get db password
+data "aws_secretsmanager_secret" "movie_db_secret" {
+    name = "movie-db-password"
+}
+
+data "aws_secretsmanager_secret_version" "movie_db_pw" {
+    secret_id = data.aws_secretsmanager_secret.movie_db_secret.id
+}
