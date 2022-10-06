@@ -50,10 +50,12 @@ variable "private_subnet_az_c" {
 
 variable "db_storage" {
     description = "size of the database disk"
+    type = string
 }
 
 variable "db_name" {
     description = "database name"
+    type = string
 }
 
 variable "db_engine" {
@@ -67,8 +69,6 @@ variable "db_engine_version" {
 variable "db_instance_class" {}
 
 variable "db_username" {}
-
-variable "db_parameter_group_name" {}
 
 variable "db_skip_last_snapshot" {
     description = "take a snapshot before destroying db"

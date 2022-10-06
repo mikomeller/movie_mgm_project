@@ -12,3 +12,10 @@ public_subnet_az_c = "public_az_c"
 private_subnet_az_a = "private_az_a"
 private_subnet_az_b = "private_az_b"
 private_subnet_az_c = "private_az_c"
+
+db_storage = 10
+db_name = "movie_db"
+db_engine = "mysql"
+db_engine_version = "8.0.30"
+db_instance_class = "db.t2.small"
+db_username = "root"

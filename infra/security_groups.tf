@@ -50,7 +50,7 @@ resource "aws_security_group" "db_movie_sg" {
     from_port        = 3306
     to_port          = 3306
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"] 
+    # cidr_blocks      = ["0.0.0.0/0"] 
     security_groups = [aws_security_group.movie_app_sg.id]
     # was: cidr_blocks      = [aws_vpc.main.cidr_block]
     # ipv6_cidr_blocks = [aws_vpc.main.ipv6_cidr_block]
